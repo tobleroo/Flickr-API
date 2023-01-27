@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <script src="./scripts/index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="search-box">
+        <form id="myForm" method="get" action="#">
+            <div class="text-box in-flex">
+                <label for="text-search">Text:</label>
+                <input type="text" name="text-search" id="tagsInput" required/>
+            </div>
+            <div class="amount-box in-flex">
+                <label for="amount-pics">Amount:</label>
+                <input type="number" name="amount-pics" max="99" id="amountPics" required/>
+            </div>
+            <div class="pic-size-box">
+                <select name="pic-size" class="in-select" id="picSize">
+                    <option value="s">Small</option>
+                    <option value="w">Medium</option>
+                    <option value="c">Big</option>
+                </select>
+            </div>
+            <div class="sort-box">
+                <select name="sort-type" id="sortType" class="in-select">
+                    <option value="date-posted-asc">date</option>
+                    <option value="relevance">relevans</option>
+                    <option value="interestingness-asc">interestingness</option>
+                </select>
+            </div>
+            <button>Search</button>
+        </form>
+    </div>
+    <div class="demo-pic" id="picture-box">
+
+    </div>
+</body>
+</html>
