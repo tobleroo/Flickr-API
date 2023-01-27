@@ -14,12 +14,12 @@ document.querySelector('form button').addEventListener('click', event =>{
     if(tags == "" || amountPics == ""){
         picBox.innerText = "enter text and amount!";
     }else{
-        fetchFlickrJson(tags, amountPics, picSize, sorting);
+        fetchFlickrPictures(tags, amountPics, picSize, sorting);
     }
     
 })
 
-function fetchFlickrJson(tags, amountPics, sizePics,sortType){
+function fetchFlickrPictures(tags, amountPics, sizePics,sortType){
     let tempString = '';
 
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b03ecc2568d5edf1a278f1f1e8041a9b&text` +
