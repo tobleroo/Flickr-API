@@ -10,16 +10,20 @@
 </head>
 <body>
     
+    /* div that holds everything regarding the form for user input */
     <div class="search-box">
         <form id="myForm" method="get" action="#">
+            /* div where user enters text to search for tags */ 
             <div class="text-box in-flex">
                 <label for="text-search">Text:</label>
                 <input type="text" name="text-search" id="tagsInput" required/>
             </div>
+            /* this div contains input where user enters how many pictures they want, with a maximum of 99 pictures */
             <div class="amount-box in-flex">
                 <label for="amount-pics">Amount:</label>
                 <input type="number" name="amount-pics" max="99" id="amountPics" required/>
             </div>
+            /* this div contains an option for the user to choose a size on the collected pictures, where three sizes are optional */
             <div class="pic-size-box">
                 <select name="pic-size" class="in-select" id="picSize">
                     <option value="s">Small</option>
@@ -27,6 +31,7 @@
                     <option value="c">Big</option>
                 </select>
             </div>
+            /* this div contains a secelt input where the user can select on how to sort the pictures based on preferences */
             <div class="sort-box">
                 <select name="sort-type" id="sortType" class="in-select">
                     <option value="date-posted-asc">date</option>
@@ -37,6 +42,7 @@
             <button>Search</button>
         </form>
     </div>
+    /* this div will contain all pictures thats been collected from the API. appended by the javascript file */ 
     <div class="demo-pic" id="picture-box">
 
     </div>
