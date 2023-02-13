@@ -1,7 +1,9 @@
+
 const picBox = document.getElementById('picture-box');
 document.querySelector('form button').addEventListener('click', event =>{
     event.preventDefault();
-
+    // this event listener will run when the button in search form is clicked on
+    
     // set the innerhtml to empty so that once a search event is started, it clears the html file from any previous pictures or other data.
     picBox.innerHTML = "";
     
