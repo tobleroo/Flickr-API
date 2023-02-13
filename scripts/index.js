@@ -2,7 +2,7 @@ const picBox = document.getElementById('picture-box');
 document.querySelector('form button').addEventListener('click', event =>{
     event.preventDefault();
 
-    // clear picture box
+    // set the innerhtml to empty so that once a search event is started, it clears the html file from any previous pictures or other data.
     picBox.innerHTML = "";
     
     // get data from user form
@@ -21,19 +21,19 @@ document.querySelector('form button').addEventListener('click', event =>{
     
 })
 
-// this function retrives data from the Flickr api based on paramters by the user
+// this function retrives data from the Flickr api based on parameters by the user
 function fetchFlickrPictures(tags, amountPics, sizePics,sortType){
-    // create a string to assign value to based on outcome of the function
+    // create a string to assign value based on outcome of the function
     let tempString = '';
 
     // the url string to use the api with the preferences from the user embedded
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b03ecc2568d5edf1a278f1f1e8041a9b&text` +
             `=${tags}&sort=${sortType}&per_page=${amountPics}&page=&format=json&nojsoncallback=1`;
     
-    // start to fetch the data using the url string
+    // start to fetch the data from FLickr API using the url string
     fetch(url)
         .then(function(res){
-            // if status code is valid
+            // if status code is between 200 and 300 then it's a valid fetch
             if(res.status >= 200 && res.status < 300){
                 return res.json()
             }else{
@@ -44,7 +44,7 @@ function fetchFlickrPictures(tags, amountPics, sizePics,sortType){
         .then(function(data){
             // if statement to asses if api has photos or not
             if(data.photos.photo.length > 0){
-                // run through the photo data from the api
+                // run through the photo data array from the api
                 for(let i = 0; i < data.photos.photo.length; i++){
                     // assign the data to the previously created string as html code
                     tempString += `<a target="_blank" href="https://live.staticflickr.com/${data.photos.photo[i].server}/${data.photos.photo[i].id}_${data.photos.photo[i].secret}_${sizePics}.jpg">
