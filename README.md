@@ -6,4 +6,4 @@ and size of the pictures
 
 ## pictures
 
-![Example image](example.png)
+![Example image](https://github.com/tobleroo/Flickr-API/blob/main/flick-api-demo.png?raw=true)
